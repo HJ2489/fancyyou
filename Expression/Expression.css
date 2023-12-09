@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    perspective: 1300px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  header .logo {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* ----------- */
+ul li
+{
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+ul li::before
+{
+    content: '';
+    position: absolute;
+    inset: 30px;
+    box-shadow: 0 0 0 10px var(--clr),
+    0 0 0 20px var(--bg),
+    0 0 0 22px var(--clr);
+    transition: 0.5s;
+}
+
+ul li:hover::before
+{
+    inset: 15px;
+}
+
+ul li::after
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bg);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+ul li:hover::after
+{
+    inset: 0px;
+    transform: rotate(0deg);
+}
+
+ul li a
+{
+    position: relative;
+    text-decoration: none;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li a i
+{
+    font-size: 2em;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+ul li:hover a i
+{
+    color: var(--clr);
+    transform: translateY(-40%);
+}
+
+ul li a span
+{
+    position: absolute;
+    font-family: consolas;
+    color: var(--clr);
+    opacity: 0;
+    transition: 0.5s;
+    transform: scale(0) translateY(200%);
+}
+
+ul li:hover a span
+{
+    opacity: 1;
+    transform: scale(1) translateY(100%);
+}
+
+ul li:hover a i,
+ul li:hover a span
+{
+    filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
+
+/* ------------ */
+
+  /* header ul li {
+    list-style: none;
+    margin-left: 20px;
+  }
+  header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+  }
+  header ul li a:hover,
+  header ul li .active {
+    background: #fff;
+    color: #ec9bad;
+  } */
+
+.texttwo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+.textone {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+}
+.textthree {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+}
+:root {
+    --margin-top: 0;
+    --margin-left: 0;
+    --animation-duration: 0s;
+    --animation-delay: 0s;
+}
+div {
+    transform-style: preserve-3d;
+}
+.word-box,
+.word-box .word{
+position: absolute;
+animation: rotY 0s linear infinite;
+animation-duration: var(--animation-duration);
+animation-delay: var(--animation-delay);
+}
+.word-box{
+    margin-top: var(--margin-top);
+}
+.word-box .word{
+    margin-left: var(--margin-left);
+}
+.word-box .word {
+    animation-duration: reverse;
+}
+@keyframes rotY {
+    to{
+        transform: rotateY(360deg);
+    }
+    
+}

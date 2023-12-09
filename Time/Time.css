@@ -1,0 +1,471 @@
+:root {
+    --background-color: #2c3e50;
+    --border-color: #7591AD;
+    --text-color: #34495e;
+    --color1: #ec3e27;
+    --color2: #fd79a8;
+    --color3: #0984e3;
+    --color4: #00b894;
+    --color5: #fdcb6e;
+    --color6: #e056fd;
+    --color7: #F97F51;
+    --color8: #BDC581;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 16px;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  header .logo {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+/* ----------- */
+ul li
+{
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+ul li::before
+{
+    content: '';
+    position: absolute;
+    inset: 30px;
+    box-shadow: 0 0 0 10px var(--clr),
+    0 0 0 20px var(--bg),
+    0 0 0 22px var(--clr);
+    transition: 0.5s;
+}
+
+ul li:hover::before
+{
+    inset: 15px;
+}
+
+ul li::after
+{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bg);
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+ul li:hover::after
+{
+    inset: 0px;
+    transform: rotate(0deg);
+}
+
+ul li a
+{
+    position: relative;
+    text-decoration: none;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li a i
+{
+    font-size: 2em;
+    transition: 0.5s;
+    color: var(--clr);
+}
+
+ul li:hover a i
+{
+    color: var(--clr);
+    transform: translateY(-40%);
+}
+
+ul li a span
+{
+    position: absolute;
+    font-family: consolas;
+    color: var(--clr);
+    opacity: 0;
+    transition: 0.5s;
+    transform: scale(0) translateY(200%);
+}
+
+ul li:hover a span
+{
+    opacity: 1;
+    transform: scale(1) translateY(100%);
+}
+
+ul li:hover a i,
+ul li:hover a span
+{
+    filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0 40px var(--clr)) drop-shadow(0 0 60px var(--clr));
+}
+
+/* ------------ */
+
+  /* header ul li {
+    list-style: none;
+    margin-left: 20px;
+  }
+  header ul li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+  }
+  header ul li a:hover,
+  header ul li .active {
+    background: #fff;
+    color: #ec9bad;
+  } */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+}
+
+/* .channel {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -200px);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 999;
+} */
+
+.moon{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 0px 40px white ;
+    border-radius: 50%;
+    background: rgb(243, 238, 172);
+}
+.moon>div{
+    position: relative;
+    top: 80px;
+    left: 0px;
+    width: 20px;
+    height: 20px;
+    background: rgb(53, 52, 52);
+    filter: blur(17px);
+}
+.moon>div:nth-child(2){
+    top: 90px;
+    left: 10px;
+}
+
+
+.clouds{
+    position: absolute;
+    top: 10%;
+    width: 250%;
+    height: 150px;
+    animation: move 10s 0s linear infinite;
+}
+.clouds>.cloud{
+  width: 100%;
+}
+@keyframes move {
+    0%{
+        right: 0%;
+    }
+    100%{
+        right: 250%;
+    }
+}
+.clouds>.cloud:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+.clouds>.cloud:nth-child(3){
+    position: absolute;
+    top: 80%;
+    left: 55%;
+}
+.clouds>.cloud:nth-child(4){
+    position: absolute;
+    top: 50%;
+    left: 100%;
+}
+.clouds>.cloud:nth-child(5){
+    position: absolute;
+    top: 50%;
+    left: 130%;
+}
+.clouds>.cloud:nth-child(6){
+    position: absolute;
+    top: 50%;
+    left: 200%;
+}
+.clouds>.cloud:nth-child(7){
+    position: absolute;
+    top: 50%;
+    left: 150%;
+}
+.clouds>.cloud:nth-child(8){
+    position: absolute;
+    top: 50%;
+    left: 170%;
+}
+.clouds>.cloud:nth-child(9){
+    position: absolute;
+    top: 50%;
+    left: 230%;
+}
+.clouds>.cloud:nth-child(10){
+    position: absolute;
+    top: 80%;
+    left: 255%;
+}
+.clouds>.cloud>div{
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    width: 500px;
+    height: 30px;
+    background: rgb(255, 255, 255);
+    opacity: 0.7;
+    filter: blur(100px);
+}
+.clouds>.cloud>div:nth-child(2){
+    top: 40%;
+    left: 10%;
+}
+.clouds>.cloud>div:nth-child(3){
+    top: 30%;
+    left: 20%;
+}
+
+.container {
+    position: relative;
+    /* top: 96.67px; */
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    perspective-origin: left;
+    transform-style: preserve-3d;
+}
+
+.line {
+    position: absolute;
+    width: 200px;
+    height: 3px;
+    border-radius: 3px;
+    /* background-color: #fff; */
+    background-image: linear-gradient(to right, var(--color), #ffffff50, transparent);
+    animation: down 1s linear infinite both;
+    animation-delay: calc(var(--d) * 0.3s);
+}
+
+.line::before,
+.line::after {
+    position: absolute;
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-image: inherit;
+}
+
+.line::before {
+    filter: blur(5px);
+}
+
+.line::after {
+    filter: blur(10px);
+}
+
+@keyframes down {
+    0% {
+        transform: 
+        translateY(calc(var(--z) * 60px)) 
+        translateZ(calc(var(--z) * 100px)) 
+        rotate(-45deg)
+        translateX(calc(var(--x) * 100px)) 
+        ;
+    }
+    100% {
+        transform: 
+        translateY(calc(var(--z) * 60px)) 
+        translateZ(calc(var(--z) * 100px)) 
+        rotate(-45deg)
+        translateX(calc(var(--x) * -100px)) 
+        ;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+@media screen and (min-width: 1025px) {
+
+  .box {
+    background: url(../images/bg01.jpg);
+    width: 80%;
+    margin: 5% auto;
+    padding: 11% 5%;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* box-shadow: 0 50px 50px rgba(245, 207, 207, 0.5), 0 0 0 100px rgba(218, 75, 75, 0.1); */
+  }
+
+
+  #heart{
+    width: 180px;
+    height: 100px;
+    position: absolute;
+    bottom: 0%;
+    margin: auto;
+    background: #ff3e3e;
+    transition: 1s;
+    transform-origin: right bottom;
+}
+
+#heart:before{
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    transition: 2s;
+    margin-top: 0px;
+    transform-origin: right bottom;
+}
+
+#heart:hover{
+    transform: rotate(45deg);
+    border-top-left-radius: 50px;
+    
+    border-bottom-left-radius: 50px;
+}
+
+#heart:hover:before{
+    transform: rotate(450deg) translateY(100px); 
+    border-top-left-radius: 50px;
+    background: #e22c2c;    
+    border-bottom-left-radius: 50px;
+
+}
+
+  .container h2 {
+    text-align: center;
+    font-size: 10em;
+    line-height: 0.7em;
+    color: #333;
+    margin-top: -80px;
+  }
+
+  .container h2 span {
+    color: #fbc2eb;
+    display: block;
+    font-weight: 400;
+    letter-spacing: 6px;
+    font-size: 0.2em;
+  }
+
+  .countdouwn {
+    display: flex;
+    margin-top: 0px;
+  }
+
+  .countdouwn div {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: #333333;
+    color: #ffffff;
+    margin: 0 15px;
+    font-size: 3em;
+    font-weight: 500;
+  }
+
+  .countdouwn div:before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    /* background: #ff0; */
+    background: #efecb6;
+    color: #333;
+    font-size: 0.35em;
+    line-height: 35px;
+    font-weight: 300;
+  }
+
+  .countdouwn #day:before {
+    content: "Days";
+  }
+
+  .countdouwn #hour:before {
+    content: "Hours";
+  }
+
+  .countdouwn #minute:before {
+    content: "Minutes";
+  }
+
+  .countdouwn #second:before {
+    content: "Seconds";
+  }
+}
